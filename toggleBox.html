@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Box</title>
+
+    <!-- alpinejs -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </head>
+  <body>
+    <main x-data="{show: true}">
+      <button x-on:click="show=!show">Click</button>
+      <small x-text="show ? 'it is shown' : 'it is not visible'"></small>
+      <div x-show="show">I am Visible.</div>
+    </main>
+  </body>
+</html>
