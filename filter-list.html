@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Lists</title>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </head>
+  <body>
+    <div
+      x-data="{search: '', items:['apple', 'orange', 'mango', 'grapes', 'watermelon', 'strawberry', 'avocado']}"
+    >
+      <input type="text" x-model="search" />
+      <p>Result: <em x-text="search"></em></p>
+      <ul>
+        <template
+          x-for="item in items.filter(i => i.toLowerCase().includes(search.toLowerCase()))"
+        >
+          <li x-text="item"></li>
+        </template>
+      </ul>
+    </div>
+  </body>
+</html>
