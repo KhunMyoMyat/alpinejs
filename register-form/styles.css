@@ -48,6 +48,15 @@ form {
   flex-direction: column;
 }
 
+.text-success {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: rgba(0, 128, 0, 0.779);
+  padding: 5px;
+  border-radius: 0.5rem;
+}
+
 form input {
   margin-bottom: 1.5rem;
   padding: 0.5rem;

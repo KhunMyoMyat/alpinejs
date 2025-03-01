@@ -7,19 +7,64 @@
 
     <!-- custom css -->
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- alpine js -->
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
   <body>
-    <div class="container">
+    <div
+      class="container"
+      x-data="{
+      name: '',
+      email: '',
+      password: '',
+      cpassword: '',
+      error:{name:'', email:'', password:'', cpassword:''},
+      success:''
+    }"
+    >
       <div class="form-img">
         <img src="../imgs/form1.jpg" alt="" />
       </div>
+
       <div class="form-input">
         <h1>Register Form</h1>
-        <form action="">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Email Address" required />
-          <input type="password" placeholder="Password" required />
-          <input type="password" placeholder="Comfirm Password" required />
+        <span x-text="success" class="tex-success"></span>
+
+        <form
+          action=""
+          @submit.prevent="
+        error.name = name ? '' : 'Name is required';
+        error.email = email ? '' : 'Email is required';
+        error.password = password ? '' : 'Password is required';
+        error.cpassword = cpassword ? '' : 'Contirm Password is required';
+        if(!error.name && !error.email && !error.password && !error.cpassword){
+          success = 'Your Register Form is submitted successfully.';
+          name = '',
+          email = '',
+          password = '',
+          cpassword = '',
+          setTimeout(()=>{
+            success=''
+          }, 4000);
+        }
+        "
+        >
+          <input type="text" placeholder="Your Name" x-model="name" />
+          <span x-text="error.name"></span>
+
+          <input type="email" placeholder="Email Address" x-model="email" />
+          <span x-text="error.email"></span>
+
+          <input type="password" placeholder="Password" x-model="password" />
+          <span x-text="error.password"></span>
+
+          <input
+            type="password"
+            placeholder="Comfirm Password"
+            x-model="cpassword"
+          />
+          <span x-text="error.cpassword"></span>
           <button type="submit">Register</button>
         </form>
       </div>
