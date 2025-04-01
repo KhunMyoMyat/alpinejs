@@ -58,7 +58,6 @@ form {
 }
 
 form input {
-  margin-bottom: 1.5rem;
   padding: 0.5rem;
   font-size: 1rem;
   border: none;
@@ -69,6 +68,13 @@ form input {
 form input:focus {
   outline: none;
   border: 2px solid rgb(47, 255, 241);
+}
+
+.required {
+  font-size: 10px;
+  font-weight: lighter;
+  color: red;
+  margin-bottom: 1.5rem;
 }
 
 form button {
@@ -102,7 +108,7 @@ form button:active {
     width: 100%;
   }
 
-  form input {
+  .required {
     margin-bottom: 2.5rem;
   }
 }

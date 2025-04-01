@@ -29,7 +29,7 @@
 
       <div class="form-input">
         <h1>Register Form</h1>
-        <span x-text="success" class="tex-success"></span>
+        <span x-text="success" class="text-success"></span>
 
         <form
           action=""
@@ -51,20 +51,20 @@
         "
         >
           <input type="text" placeholder="Your Name" x-model="name" />
-          <span x-text="error.name"></span>
+          <span x-text="error.name" class="required"></span>
 
           <input type="email" placeholder="Email Address" x-model="email" />
-          <span x-text="error.email"></span>
+          <span x-text="error.email" class="required"></span>
 
           <input type="password" placeholder="Password" x-model="password" />
-          <span x-text="error.password"></span>
+          <span x-text="error.password" class="required"></span>
 
           <input
             type="password"
             placeholder="Comfirm Password"
             x-model="cpassword"
           />
-          <span x-text="error.cpassword"></span>
+          <span x-text="error.cpassword" class="required"></span>
           <button type="submit">Register</button>
         </form>
       </div>
